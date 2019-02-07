@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the sockMerchant function below.
+def sockMerchant(n, ar):
+    socks_dict = {}
+    for item in ar:
+        if item in socks_dict.keys():
+            count = socks_dict[item]
+            socks_dict[item] = count + 1
+        else:
+            socks_dict[item] = 1
+    print(socks_dict)
+    pairs = 0
+    for item in socks_dict:
+        pairs += int(socks_dict[item] / 2)
+    print(pairs)
+    return pairs
+
+if __name__ == '__main__':
+
+    n = 9
+    a = '10 20 20 10 10 30 50 10 20'
+
+    ar = list(map(int, a.rstrip().split()))
+
+    result = sockMerchant(n, ar)
