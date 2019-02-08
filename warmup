@@ -1,32 +1,78 @@
 #!/bin/python3
 
+# Warm Up 1
+# import math
+# import os
+# import random
+# import re
+# import sys
+#
+# # Complete the sockMerchant function below.
+# def sockMerchant(n, ar):
+#     socks_dict = {}
+#     for item in ar:
+#         if item in socks_dict.keys():
+#             count = socks_dict[item]
+#             socks_dict[item] = count + 1
+#         else:
+#             socks_dict[item] = 1
+#     print(socks_dict)
+#     pairs = 0
+#     for item in socks_dict:
+#         pairs += int(socks_dict[item] / 2)
+#     print(pairs)
+#     return pairs
+#
+# if __name__ == '__main__':
+#
+#     n = 9
+#     a = '10 20 20 10 10 30 50 10 20'
+#
+#     ar = list(map(int, a.rstrip().split()))
+#
+#     result = sockMerchant(n, ar)
+
+# Warm Up 2
 import math
 import os
 import random
 import re
 import sys
 
-# Complete the sockMerchant function below.
-def sockMerchant(n, ar):
-    socks_dict = {}
-    for item in ar:
-        if item in socks_dict.keys():
-            count = socks_dict[item]
-            socks_dict[item] = count + 1
+# Complete the jumpingOnClouds function below.
+def jumpingOnClouds(c):
+
+    index = 0
+    index_list = []
+    for item in c:
+        if item == 0:
+            index_list.append(index)
+            index += 1
         else:
-            socks_dict[item] = 1
-    print(socks_dict)
-    pairs = 0
-    for item in socks_dict:
-        pairs += int(socks_dict[item] / 2)
-    print(pairs)
-    return pairs
+            index += 1
+    print(index_list)
+
+    new_position = 0
+    jumps = 0
+    while new_position < len(index_list):
+        start = 0 + new_position
+        end = 2 + new_position
+        if end > (len(index_list)-1):
+            jumps += 1
+            break
+        elif index_list[end] - index_list[start] == 2:
+            new_position += 2
+            jumps += 1
+        else:
+            new_position += 1
+            jumps += 1
+    print(jumps)
+    return jumps
 
 if __name__ == '__main__':
 
-    n = 9
-    a = '10 20 20 10 10 30 50 10 20'
+    n = 100
+    ca = '0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 1 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 1 0 1 0 1 0 1 0 0 0 0 0 0 1 0 0 0'
+    c = list(map(int, ca.rstrip().split()))
 
-    ar = list(map(int, a.rstrip().split()))
-
-    result = sockMerchant(n, ar)
+    result = jumpingOnClouds(c)
