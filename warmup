@@ -94,3 +94,36 @@
 #     n = 10
 #
 #     result = repeatedString(s, n)
+#Warm Up 4
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countingValleys function below.
+def countingValleys(n, s):
+    current_position = 0
+    enter_valley = False
+    vallies = 0
+    for step in s:
+        if step == 'U':
+            current_position += 1
+            if enter_valley == True and current_position >=0:
+                vallies += 1
+                enter_valley = False
+        else:
+            current_position -= 1
+            if current_position < 0:
+                enter_valley = True
+    return vallies
+
+if __name__ == '__main__':
+
+    n = 8
+
+    s = 'UDDDUDUU'
+
+    result = countingValleys(n, s)
