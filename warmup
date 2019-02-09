@@ -33,30 +33,64 @@
 #     result = sockMerchant(n, ar)
 
 # Warm Up 2
-import math
-import os
-import random
-import re
-import sys
+# import math
+# import os
+# import random
+# import re
+# import sys
+#
+# # Complete the jumpingOnClouds function below.
+# def jumpingOnClouds(c):
+#
+#     jumps = 0
+#     new_position = 0
+#     while new_position < len(c)-1:
+#         if (new_position + 2 < len(c)) and (c[new_position + 2] != 1):
+#             jumps += 1
+#             new_position += 2
+#         else:
+#             jumps += 1
+#             new_position += 1
+#     return jumps
+#
+# if __name__ == '__main__':
+#
+#     n = 6
+#     ca = '0 0 0 1 0 0'
+#     c = list(map(int, ca.rstrip().split()))
+#
+#     result = jumpingOnClouds(c)
 
-# Complete the jumpingOnClouds function below.
-def jumpingOnClouds(c):
-
-    jumps = 0
-    new_position = 0
-    while new_position < len(c)-1:
-        if (new_position + 2 < len(c)) and (c[new_position + 2] != 1):
-            jumps += 1
-            new_position += 2
-        else:
-            jumps += 1
-            new_position += 1
-    return jumps
-
-if __name__ == '__main__':
-
-    n = 6
-    ca = '0 0 0 1 0 0'
-    c = list(map(int, ca.rstrip().split()))
-
-    result = jumpingOnClouds(c)
+#Warm Up 3
+# import math
+# import os
+# import random
+# import re
+# import sys
+#
+# # Complete the repeatedString function below.
+# def repeatedString(s, n):
+#     a = 0
+#     for letter in s:
+#         if letter == 'a':
+#             a += 1
+#     whole_strings = int(n/len(s))
+#     partial_strings = n % len(s)
+#     partial_string = s[0:partial_strings]
+#
+#     total_a = whole_strings * a
+#
+#     for letter in partial_string:
+#         if letter == 'a':
+#             total_a += 1
+#
+#     return(total_a)
+#
+#
+# if __name__ == '__main__':
+#
+#     s = 'aba'
+#
+#     n = 10
+#
+#     result = repeatedString(s, n)
