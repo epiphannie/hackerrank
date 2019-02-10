@@ -107,18 +107,18 @@ import sys
 def countingValleys(n, s):
     current_position = 0
     enter_valley = False
-    vallies = 0
+    valleys= 0
     for step in s:
         if step == 'U':
             current_position += 1
             if enter_valley == True and current_position >=0:
-                vallies += 1
+                valleys += 1
                 enter_valley = False
         else:
             current_position -= 1
             if current_position < 0:
                 enter_valley = True
-    return vallies
+    return valleys
 
 if __name__ == '__main__':
 

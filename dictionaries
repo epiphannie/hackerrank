@@ -1,0 +1,44 @@
+#case sensitive, only whole words
+# print Yes if can replicate, print No if not
+
+#dictionaries 1
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the checkMagazine function below.
+def checkMagazine(magazine, note):
+    can_replicate = True
+    magazine_dict = {}
+    for word in magazine:
+        if word in magazine_dict:
+            magazine_dict[word] += 1
+        else:
+            magazine_dict[word] = 1
+    for word in note:
+        if word in magazine_dict:
+            magazine_dict[word] -=1
+            if magazine_dict[word] < 0:
+                can_replicate = False
+        else:
+            can_replicate = False
+
+    if can_replicate == False:
+        print('No')
+    else:
+        print('Yes')
+
+
+
+if __name__ == '__main__':
+
+    ma = "give me one grand today night"
+    na = "give one grand today"
+
+    magazine = ma.rstrip().split()
+
+    note = na.rstrip().split()
+
+    checkMagazine(magazine, note)
